@@ -1,0 +1,8 @@
+<div class="container">
+   <div class="content mx-auto" >
+      <!-- <app-topbar></app-topbar> -->   
+      <app-topic-list [topics]="topics" [loading] = "loading"></app-topic-list>
+      <div  *ngIf="!hasData" class="no-topics">You dont have any article topics yet, how about you post some?</div>
+      <decablog-pagination [data] = "pageData" (onNewPageNumber)="pageChanged($event)" *ngIf="pageData" (onPerPageChanged) = "perPageChanged($event)"></decablog-pagination>
+   </div>
+</div>

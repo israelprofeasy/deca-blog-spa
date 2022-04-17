@@ -1,0 +1,17 @@
+<div class="reply-box">
+    <div class="wrapp">
+      <div class="comment-input">
+          <textarea name="comment" id="comment" cols="30" rows="3" placeholder="Replying to {{ commentator.FullName }}"></textarea>
+      </div>
+      <div class="comment-tools d-flex justify-content-between align-items-center">
+        <div class="edit">
+          <span class="fw-bold bold">B</span>
+          <span class="fst-italic italicize">i</span>
+        </div>
+        <div class="buttons">
+          <button id="cancel" (click)="handleCloseReply()">Cancel</button>
+          <button id="respond">Respond</button>
+        </div>
+      </div>
+    </div>
+</div>

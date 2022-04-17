@@ -1,0 +1,74 @@
+ <!-- general form elements -->
+    <div class="card editor-card p-3">
+      <div class="card-header bg-white">
+        <h2 class="card-title" >Write New Article</h2>
+      </div>
+      <!-- /.card-header -->
+      <!-- form start -->      
+        <div class="card-body">
+            <form [formGroup]="createArticleForm" (ngSubmit)="validateForm(['topic','subtopic', 'articleText', 'category', 'abstract', 'keywords'])">           
+            <div class="row">
+              <div class="col-lg-3">
+                  <div class="row">
+                      <div class="col-lg-10 imgUp">
+                    <label class="imagePreview" *ngIf="checkImage() else showimage;">    
+                        <span class="iconify" data-icon="bxs:camera" style="color: #c4c4c4;" data-width="58" data-height="48"></span>                
+                        <input type="file" accept="image/*" (change)="onFileChange($event)"  formControlName="photo" class="uploadFile tagify" style="width: 0px;height: 0px;overflow: hidden;">          
+                    </label>                                      
+                        <ng-template #showimage>
+                          <div class="imagePreview">
+                            <div (click)="removeImage($event)" class="close-button">X</div>                           
+                            <img [src]="imageURL" class="imagePreview" [alt]="createArticleForm.value.name" >                        
+                          </div>
+                        </ng-template>
+                      </div><!-- col-2 -->
+                     </div><!-- row -->
+                </div>
+                <div class="col-lg-9">
+                  <div class="row">
+                      <div class="form-group col-lg-4">
+                          <label for="InputArticle" class="mb-sm-1">Article Topic</label>
+                          <input type="text" formControlName="topic"  class="form-control" id="article-topic">
+                        </div>
+                        
+                      <div class="form-group col-lg-4">
+                          <label for="InputArticle" class="mb-sm-1">Sub Topic</label>
+                          <input type="subtopic" formControlName="subtopic" class="form-control" id="article-title">
+                        </div>
+                       <div class="form-group col-lg-3">
+                          <label for="select-category" class="mb-sm-1">Category</label>
+                          <select class="form-control" formControlName="category">
+                              <option  *ngFor="let item of categories" value ="{{item.Id}}">{{item.Name}}</option>
+                          </select>
+                        </div>
+                  </div>
+                  <div class="form-group row mt-3">
+                       <div class="col-sm-4">
+                          <label for="InputArticle" class="mb-sm-1">Abstract</label>
+                          <textarea class="form-control" formControlName="abstract"></textarea>
+                        </div>                        
+                        <div class="col-sm-7">
+                          <label for="Input-Keyword "class="mt-lg-1 mb-lg-3">Keywords</label>        
+                          <tag-input [ngModel]="itemsAsObjects" formControlName="keywords" [displayBy]="'name'"    
+                               (onAdd)="onAdding($event)"
+                              (onRemove)="onRemoving($event)" [separatorKeyCodes]="[32]">
+                          </tag-input>
+                      </div>                       
+                  </div>
+                </div>
+                <div class="form-group row quill-editor">
+                    <quill-editor formControlName="articleText" [style]="{height:'200px'}"></quill-editor>
+                </div>
+                <!-- Add the text editor here --> 
+            </div>
+            <div class="card-footer-fluid bg-white mt-3 post-btn" [style]="{border:'0'}">
+              <button *ngIf="loading else loader;" disabled type="submit" class="btn create-article-btn">Posting... </button>
+              <ng-template #loader>
+                  <button  class="btn create-article-btn">Post </button>
+                </ng-template>
+            </div>
+            </form>
+        </div>              
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->

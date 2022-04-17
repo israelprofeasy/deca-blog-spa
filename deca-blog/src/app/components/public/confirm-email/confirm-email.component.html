@@ -1,0 +1,39 @@
+
+<div class="loading-wrapper"  *ngIf="loading else loadingStopped">
+    <div class="img-wrapper">
+        <img  class ="loadingImg" src="../../assets/images/loadingImg01.svg">
+    </div> 
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12">
+<ng-template #loadingStopped>
+    <div class="emailResponseConfirm">
+        <div *ngIf="emailConfirmed">
+            <div class="content-wrapper">
+                 <div class="confirm-email-img-wrapper">
+                     <img class="img" src="../../assets/images/check.png" />
+                 </div>
+                 <div class="confirm-email-text-wrapper">
+                     <span>{{responseMessage}}</span>
+                 </div>
+                 <div class="btn-wrapper">  
+                     <br>
+                     Please <a (click)="modalService.open('login')" style="color: #34A853;
+                     cursor: pointer;">click here</a> to login or <a [routerLink]="['/home']">here</a> to go to home
+                </div>
+            </div>
+        </div>
+        <div class="emailResponse" *ngIf="!emailConfirmed">
+            <div class="content-wrapper">
+                <div class="confirm-email-img-wrapper">
+                    <img class="img" src="../../assets/images/cancel.png" />
+                </div>
+                <div class="confirm-email-text-wrapper">
+                    <span>{{responseMessage}}</span>&nbsp;&nbsp;<a class="retry"
+                     (click)="confirmEmail()">click to try again</a>
+                </div>
+            </div>
+        </div>
+     </div>
+</ng-template>

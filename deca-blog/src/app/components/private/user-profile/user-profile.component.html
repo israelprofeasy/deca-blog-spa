@@ -1,0 +1,118 @@
+<div *ngIf="!loadingInfo  else loading">
+  <div *ngIf="!loadingError else errorLoading">
+    <form [formGroup]="updateForm" (ngSubmit)="updateUserInformation()">
+      <div class="wrapper m-auto ">
+          <div class="info-wrapper">
+              <div class="info-img m-auto">  
+                  <img [src]="userPhoto? userPhoto : '../../../../assets/images/avartar.png'" class="img-fluid" alt="personal photo">
+                  <label  class="imgB1" (click)="acivateClick(photoField)" (click)="toggleIcon()">    
+                    <span   class="iconify"  data-icon="ant-design:camera-filled" style="color: #34a853;; "data-width="20" ></span>         
+                </label> 
+                <div class="text-center">
+                  <input class="form-control" type="file" 
+                          (input)="onChange($event)" hidden #photoField>
+                          <label class="myDIV" class="imgB11" (click)="toggleIcon()" *ngIf="userPhoto" (click)="removeImage($event)" >
+                            <span id="hover-div" class="iconify" data-icon="fluent:delete-dismiss-28-filled" style="color: #f82929;"></span>
+                            
+                          </label>
+              </div>
+              </div>     
+              
+              <div>
+                  <div>
+                    <p class="info-title">Personal Info</p>
+                    <br>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="firstname">First Name</label>
+                      <input type="text" 
+                      formControlName="firstname"
+                      id="firstname" 
+                      class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="lastname">Last Name</label>
+                      <input type="text" 
+                      formControlName = "lastname"
+                      id="lastname" 
+                      class="form-control" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="gender">Gender</label>
+                      <select class="form-select select" formControlName = "gender">
+                        <option *ngFor="let gender of genders" [value]="gender">{{ gender }} </option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="phone">Phone</label>
+                      <input type="text" 
+                      class="form-control" 
+                      formControlName = "phoneNumber"
+                      id="phone" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control"  id="email" 
+                      formControlName = "email"
+                      class="form-control" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="squad">Squad</label>
+                      <input type="squad" 
+                      class="form-control" 
+                      id="squad"
+                      formControlName = "squad" />
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="form-group col-md-15">
+                            <label for="stack">Stack</label>
+                            <input type="stack" 
+                            class="form-control" 
+                            id="stack" 
+                            formControlName = 'stack' />
+                          </div>
+                          </div>
+                      </div>     
+                      <p></p> 
+                      <br>          
+                      <div class="d-flex justify-content-end buttons">
+                        <div class="d-flex flex-row-reverse">
+                          <button class="btn btnTertiary" (click) = "toggleEditMode()" *ngIf="!isEditMode">Edit Profile</button>
+                      </div>
+                        <button class="btn btnTertiary" (click)="toggleEditMode()" *ngIf="isEditMode">Cancel</button>
+                        <button class="btn btnPrimary" type="submit" *ngIf="isEditMode">Save Profile</button>
+                    </div>   
+                    <app-update-address [address]="address"></app-update-address> 
+                  </div>
+                  <a [routerLink]="['/account','profile','change-password']">Change Password</a>
+              </div>
+          </div>
+      </div>   
+    </form>
+  </div>   
+</div>
+<ng-template #loading>
+  
+    <!-- <div class="img-wrapper">
+       <img id="imgs"  class ="loadingImg" src="../../assets/images/loadingImg01.svg">
+    </div> -->
+  <app-loading-profile></app-loading-profile>
+  
+</ng-template>
+<ng-template #errorLoading>
+  <div class="blocktext">
+    <p>Something went wrong
+      Please <a id="reload-anchor" style="color: rgb(106, 106, 236);" (click)="reloadCurrentPage()"><u>click here</u></a> to reload page.
+</p>
+</div>
+</ng-template>
+<!-- Page not found. 
+There was an error loading the page. 
+<mark (click)="reloadCurrentPage()">Click here </mark> to reload page -->
+

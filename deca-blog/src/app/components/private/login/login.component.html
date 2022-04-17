@@ -1,0 +1,40 @@
+<div class="deca-login-modal" >
+    <div class="deca-login-modal-container">
+        <div class ="deca-sm-container first">
+            <h1 class="deca-welcome-text">Welcome Back!</h1>
+        </div>
+        <div>
+            <span class="deca-error">{{errorMessage}}</span>
+            <form class="deca-login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <label class="deca-faint-text label">Fill in the correct details below</label><br><br>
+                Email<span class="deca-required">*</span> <br>
+                <div class="deca-login-input-div">
+                    <div class="deca-form-input">
+                        <input formControlName="email" type="email" > <i class="deca-login-fa"><img class= "deca-img-fa"src="/assets/images/address-card-solid.svg"></i>
+                    </div>
+                    <div *ngIf="isFormSubmitted && !loginForm.controls['email'].valid">
+                        <p *ngIf="loginForm.controls['email'].errors.required" class="deca-login-errorMessage deca-error">Email is required</p>
+                        <p *ngIf="loginForm.controls['email'].errors.email" class="deca-login-errorMessage deca-error">Please enter a valid email</p>
+                    </div>
+                </div>            
+                Password<span class="deca-required">*</span> <br>
+                <div class="deca-login-input-div">
+                    <div class="deca-form-input">
+                        <input formControlName="password" type="password" [type]="hide ?'password':'text'" >
+                        <i class="deca-eye2 deca-login-fa" (click)="hide=!hide"><img class="deca-img-fa" src="/assets/images/{{hide?'eye-slash-solid.svg':'eye-solid.svg'}}"></i>
+                    </div>
+                    <div *ngIf="isFormSubmitted && !loginForm.controls['password'].valid">
+                        <p *ngIf="loginForm.controls['password'].errors.required" class="deca-login-errorMessage deca-error">Password is required</p>
+                    </div>
+                </div>
+                <button type="submit" class="deca-btn-signin" *ngIf="notLoading">Sign In</button>
+                <button class="deca-btn-loading" *ngIf="loading"><Img src="../../../../assets/_loaders/Spinner-5.gif" /></button>
+            </form>
+            <div class="deca-login-footer">
+                <p class="deca-faint-text dedca-last">Don't have an account? <span class="deca-signup">Sign Up</span></p>
+                <a href="#"><p class="deca-faint-text deca-forgot-password">Forgotten password </p></a>
+            </div>        
+        </div>
+    </div>
+</div>
+<div class="deca-login-modal-background"></div>

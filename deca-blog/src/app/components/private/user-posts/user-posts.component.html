@@ -1,0 +1,43 @@
+<section class="container-fluid wrapper">
+    <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false"
+    >
+        <div class="col-md-12 mt-5" *ngFor="let article of articleInfo">
+            <div class="article-image">
+                <div class="image" [ngStyle]="{'background-image': ' url(' + article.CoverPhotoUrl  + ')'}"></div>
+                <a [routerLink]="['/articles', article.TopicId]"><h3 class="title mt-4">{{article.Topic}}</h3></a>
+            </div>
+        
+            <div class="article-header">                
+                <img src="{{article.Author.AuthorPhotoUrl}}" class="image" alt="">
+                <span class="author" *ngIf="article.Author.Stack; ngIfElse elseWhat">{{article.Author.FullName}} <br/>
+                    <span>{{article.Author.Stack}} {{article.Author.Squad}}</span>
+                </span>
+
+                <span class="author mt-3" #elseWhat>{{article.Author.FullName}}</span>
+
+                <div class="partition"></div>
+                <span class="date">{{article.DateCreated | date:'mediumDate'}}</span>
+            </div>
+
+            <div class="article-body">
+                <p class="abstract">
+                    {{article.Abstract}}
+                </p>
+                <hr/>
+            </div>
+
+            <div class="article-footer">
+                <div><span class="iconify" data-icon="ant-design:like-filled"></span> <small> 22</small></div>
+                <div><span class="iconify" data-icon="fa6-regular:comment"></span> <small> 93</small></div>
+                <div class="bookmark"><span class="iconify" data-icon="bi:bookmark"></span></div>
+            </div>
+        </div>
+    </div>
+    
+</section>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+/* @import '../../../../../../node_modules/quill/dist/quill.core.css'; 
+@import '../../../../../../node_modules/quill/dist/quill.snow.css'; */
+
+.imagePreview {
+    width: 100%;
+    height: 158px;
+    background-position: center center;
+    background-color:#ededed;
+    background-size:150px;
+    background-repeat:no-repeat;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+    position: relative;
+    z-index:0;
+}
+
+.close-button{
+  color:#ff0000;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top:5px;
+  z-index:2;
+  background:#fff;
+  padding: 1px 5px;
+  font-weight:700;
+}
+.change-topic-text{
+  margin-top:8px; 
+  color: blue;
+}
+.change-topic-text :hover{
+  cursor:pointer;
+}
+.imgUp
+{
+  margin-bottom:15px;
+}
+.del
+{
+  position:absolute;
+  top:0px;
+  right:15px;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}
+.line{
+  position: static;
+width: 24px;
+height: 0px;
+left: 0px;
+top: 0px;
+
+border: 1.5px solid #FFFFFF;
+transform: rotate(90deg);
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;
+}
+
+.create-article-btn{
+  background: var(--green-gradient);
+  color:#fff;
+}
+.imgAdd
+{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#4bd7ef;
+  color:#fff;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align:center;
+  line-height:30px;
+  margin-top:0px;
+  cursor:pointer;
+  font-size:15px;
+}
+.margindown{
+  margin: 30px 50px;
+  font-family: Mulish;
+  font-weight: 700;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 22.59px;
+}
+.Keywords-tag {
+  overflow-y: scroll;
+  height: 50px;
+  resize: none; /* Remove this if you want the user to resize the textarea */
+}
+.post-btn{
+  padding-top:80px
+}
+.quill-editor{
+  padding:1rem;
+  max-height: 200px;
+}
+@media (max-width: 1138.98px) {
+  .post-btn {
+    padding-top:100px
+  }
+}
+@media (max-width: 720.98px) {
+  .post-btn {
+    padding-top:260px
+  }
+}
+@media (max-width: 600.98px) {
+  .post-btn {
+    padding-top:140px
+  }
+  .editor-card {
+    width: 280px;
+  }
+  .quill-editor{
+    height:50px;
+  }
+}
+@media (max-width: 400.98px) {
+  .post-btn {
+    padding-top:270px
+  }
+  .editor-card {
+    width: 120px;
+  }
+}
+
+.editor-card{
+padding: 0 30px;
+}

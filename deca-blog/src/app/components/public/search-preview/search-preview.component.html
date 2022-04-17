@@ -1,0 +1,57 @@
+<div class="col-md-12 mt-5">
+    <h1 class="text-center" id="search-header">Search DecaBlog</h1>    
+    <div class="container">
+        <p class="lead text-center">{{articleTotal}} articles from thousands of inspirational writers</p>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <form action="#" (submit)="onSubmit()" method="get" id="searchForm" class="input-group">
+                    
+                    <div class="input-group-btn search-panel">
+                        
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                            <span class="fa fa-search icon"></span>
+                            </button>
+                        </span>
+                        
+                    </div>
+                    <input [(ngModel)]="searchTerm" type="text" class="form-control" name="x" placeholder="Search">
+                    <div class="partition">|</div>
+                    <select [(ngModel)]="filter" name="search_param" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <option value="search-by-topic-name" data-content="<span class='label label-success'>Article Topic</span>">Article Topic</option>
+                        <option value="search-by-author">Author</option>
+                        <option value="search-by-keyword">Keyword</option>
+                    </select>
+                </form><!-- end form -->     
+            </div><!-- end col-xs-8 -->       
+        </div><!-- end row -->  
+    </div><!-- end container -->  
+    
+    <div class="article-preview container">
+        <h3 class="text-center mb-5" *ngIf="term">Showing search results for <span class="term">{{term}}</span></h3>
+        <h3 class="text-center mb-5" *ngIf="!term">Popular Article</h3>
+        <h3 class="text-center mb-5 not-found" *ngIf="results?.length === 0;">*Article not found*</h3>
+        <div class="preview row g-1">
+            <div class="col  align-items-start  " *ngFor="let article of results | paginate: { itemsPerPage: requestParams.PerPage, currentPage: requestParams.PageNumber, totalItems: total }">
+                <div class="article-item d-flex justify-content-between">
+                    <div class="image" [ngStyle]="{'background-image': ' url(' + article.CoverPhotoUrl  + ')'}"></div>
+                    <h3 class="title text-center">{{article.Topic}}</h3>
+
+                    <div class="article-footer d-flex justify-content-center">                
+                        <img src="{{article.Author.AuthorPhotoUrl}}" class="thumbnail" alt=""><span class="author">{{article.Author.FullName}}</span> 
+                        <div class="partition"> | </div>
+                        <span class="date">{{article.DateCreated | date}}</span>
+                    </div>
+                </div>
+            
+                
+            </div>
+            <div class="text-center mt-5" *ngIf="total > requestParams.PerPage">
+                <!-- Pagination -->
+                <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+    
+            </div>
+            
+        </div>
+    </div>
+</div>

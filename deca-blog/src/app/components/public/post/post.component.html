@@ -1,0 +1,101 @@
+<section class="">
+    <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false"
+    >
+    <div *ngIf="!loading else loadingPosts">
+        <div *ngFor="let article of articleInfo">
+            <div class="row marg justify-content-center">
+                <div class="col-8 nopadding ">
+                    <div class="d-flex flex-column mb-2">
+                        <div class="contributor d-flex"
+                            *ngIf="!isUserLoggedIn()" (click)="modalService.open('login')"
+                             [routerLink]="['/profile', article.Author.AuthorId]"
+                             style="width: fit-content;"
+                             >
+                            <div class="photo"  >
+                                <img 
+                                *ngIf = "article.Author.AuthorPhotoUrl != null" 
+                                class="img-fluid" 
+                                src={{article.Author.AuthorPhotoUrl}} 
+                                alt="">
+
+                                <img 
+                                *ngIf = "article.Author.AuthorPhotoUrl == null" 
+                                class="img-fluid" 
+                                src="/deca-blog/src/assets/images/avartar.png"
+                                alt="Author Profile pics">
+                            </div>
+                            <div class="info">
+                                <p class="name">{{article.Author.FullName}}</p>
+                                <p class="role">{{article.Author.Stack}} {{article.Author.Squad}}. <span class="date">{{article.DateCreated | date}}</span></p>
+                            </div>
+                        </div>
+                        <div class="contributor d-flex"
+                        *ngIf="isUserLoggedIn()" 
+                             [routerLink]="['/profile', article.Author.AuthorId]"
+                             style="width: fit-content;"
+                         >
+                        <div class="photo"  >
+                            <img 
+                            *ngIf = "article.Author.AuthorPhotoUrl != null" 
+                            class="img-fluid" 
+                            src={{article.Author.AuthorPhotoUrl}} 
+                            alt="">
+
+                            <img 
+                            *ngIf = "article.Author.AuthorPhotoUrl == null" 
+                            class="img-fluid" 
+                            src="/deca-blog/src/assets/images/avartar.png"
+                            alt="Author Profile pics">
+                        </div>
+                        <div class="info">
+                            <p class="name">{{article.Author.FullName}}</p>
+                            <p class="role">{{article.Author.Stack}} {{article.Author.Squad}}. <span class="date">{{article.DateCreated | date}}</span></p>
+                        </div>
+                    </div>
+    
+
+                        <div [routerLink]="['/articles', article.TopicId]">  
+                            <h4 class="topic">
+                                {{article.Topic}}
+                            </h4> 
+                            <p class="abstract">
+                                {{article.Abstract}}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-info d-flex justify-content-start ">
+                        <div class="d-flex justify-content-start mr-1" *ngFor="let tag of article.Tags">
+                            <div class="keyword-container p-1">
+                                <div class="keyword"><p>{{tag}}</p></div>
+                            </div>
+                        </div>
+                        <div *ngIf="article.Tags.length >= 3" class="more-icon p-1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></div>
+                     </div>                                                                                                                                                                                                                                                                       
+                </div>
+            <div class="col-4 nopadding">
+                <div class="post-img">
+                    <img src={{article.CoverPhotoUrl}} alt="">
+                </div>
+            </div>
+            </div> 
+          </div>
+         </div>
+    </div>    
+</section>
+
+<ng-template #loadingPosts>
+    <div  class="row marg justify-content-center">
+        <div *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]">
+            <app-post-loader></app-post-loader>
+            <br>
+            <br>
+        </div>
+    </div>
+</ng-template>

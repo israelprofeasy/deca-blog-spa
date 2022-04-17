@@ -1,0 +1,22 @@
+<div class="side-nav shadow  mb-5 bg-white rounded">
+     <div class="create-btn-container">
+         <div class="create-btn" >
+             <a id="create-new-article" [routerLink]="['/article','new']" 
+                [routerLinkActive]="['active_link']">
+                <i class="iconify create-article" id="create-iconify" data-icon="ic:sharp-post-add"></i>
+                <span class="account-list create-article" >Create</span>
+            </a>
+         </div>
+     </div>
+     <ul class="side-nav-list">
+         <li><a [routerLink]="['/admin', 'overview']" [routerLinkActive]="['active-link']" *ngIf="authService.isAdmin"><i class="iconify nav-span" data-icon="akar-icons:eye" ></i><span class="account-list">Overview</span></a></li>
+         <li><a [routerLink]="['/article', 'article-topics']" [routerLinkActive]="['active-link']"><i class="iconify nav-span" data-icon="ic:outline-auto-stories"></i><span class="account-list">Article Topics</span></a></li>
+         <li><a [routerLink]="['/article','contributions']" [routerLinkActive]="['active-link']" *ngIf="authService.isEditor || authService.isDecadev"><i class="iconify nav-span" data-icon="ic:outline-auto-stories"></i><span class="account-list">Contributions</span></a></li>
+         <li><a [routerLink]="['/article','pendingcontributions']" [routerLinkActive]="['active-link']" *ngIf="authService.isEditor"><i class="iconify nav-span" data-icon="mdi:lan-pending"></i><span class="account-list">Pending</span></a></li>
+         <li><a [routerLink]="['/admin','users']" [routerLinkActive]="['active-link']" *ngIf="authService.isAdmin"><i class="iconify nav-span" data-icon="ic:round-manage-accounts"></i><span class="account-list">Manage Users</span></a></li>
+         <li><a [routerLink]="['/admin', 'invitees']" [routerLinkActive]="['active-link']" *ngIf="authService.isAdmin"><i class="iconify nav-span" data-icon="ic:outline-auto-stories"></i><span class="account-list">Invitees</span></a></li>
+         <li><a [routerLink]="['/account','invite-user']" [routerLinkActive]="['active-link']"><i class="iconify nav-span" data-icon="ic:round-manage-accounts"></i><span class="account-list">Invite User</span></a></li>
+         <li><a [routerLink]="['/account', 'profile']" [routerLinkActive]="['active-link']"><i class="iconify nav-span" data-icon="iconoir:profile-circled"></i><span class="account-list">Profile</span> </a></li>
+         <li><a href="#" [routerLinkActive]="['active-link']"><i class="iconify nav-span" data-icon="bytesize:settings"></i><span class="account-list">Settings</span></a></li>
+     </ul>
+ </div>

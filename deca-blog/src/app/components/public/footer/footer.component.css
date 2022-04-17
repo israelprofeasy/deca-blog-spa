@@ -1,0 +1,38 @@
+@media (max-width: 574px){
+    .center-text {
+        text-align: center;
+    }
+}
+
+.footer {
+    margin-top: 3%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #2E2F34;
+    color: white;
+    box-sizing: border-box;
+    overflow: auto;
+  } 
+  .bodytext{
+    width: 70%;
+    margin:0 auto;
+    margin-left: 40px;
+  }
+  .box{
+    width: 70%;
+    margin:40px 40px 0 40px;
+    background-color: white;
+  }
+  .second{
+    margin-top:40px;
+    margin-right: 1s0px;
+  }
+  .third{
+    margin-top: 40px;
+    margin-right: 10px;
+  }
+  .fourth{
+    margin-right: 20px;
+    margin-top: 40px;
+  }

@@ -1,0 +1,129 @@
+a{
+    text-decoration: none;
+}
+a:hover{
+    
+}
+.side-nav{
+    background-color: rgb(145, 136, 136);
+    padding-bottom: 70%;
+    height: 100%;
+    padding-top: 20px;
+    z-index: -1;  
+     
+}
+.create-new-article{
+    color:gradient(86.41deg, #34A853 84.83%, #B8D344 98%);
+    text-decoration: none;
+}
+.empty-div{
+    height: 3%;
+}
+.side-nav-list{
+    list-style-type: none;
+    font-family: Mulish;
+    font-size: 15px;
+    font-weight:600;
+    width:210px;
+    padding: 10px;
+}
+.create-btn{
+    width: 140px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 25px;
+    color:  #75cc8c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    cursor: pointer;
+    background-color: #ECECEC;
+    margin-bottom: 12px;
+    margin-left: -40px;
+}
+.create-btn-container{
+    display: flex;
+    justify-content: center;
+}
+.create-btn >i{
+    padding:0 10px 0 0;
+}
+#create-iconify{
+    margin-right: 6px;
+}
+.nav-span{
+    width: fit-content;
+    padding-right: 11px;
+}
+.side-nav-list >li{
+    margin-bottom: 12px;
+    padding: 3px 0;
+    display: inline;
+}
+.side-nav-list::selection{
+    background-color: white;
+}
+.side-nav-list >li > a:link{
+    text-decoration: none;
+}
+.side-nav-list >li > a{
+    color: black;
+    width: 190px;
+    display: inline-block;
+    padding: 5px 15px ;
+}
+.side-nav-list >li > a:hover, a:active, .active-link{
+    color: white;
+    border-radius: 0px 15px 15px 0px;
+    display: inline-block;
+    background: linear-gradient(to right, #34A853 49.38%,#B8D344 98%);   
+}
+.nav-span:hover:active{
+    color: white;
+}
+.create-article{
+    color: var(--solid-green);
+}
+.create-article:hover{
+    color: var(--solid-green);
+}
+@media only screen and (max-width: 468px){
+    .account-list{
+        display: none;
+    }
+    .side-nav-list{
+        width: 60px;
+    }
+    .side-nav-list >li > a{
+        width: 40px;
+        display: inline-block;
+        padding: 3px 5px 3px 5px;
+    }
+    .create-btn{
+        width: 50px;
+        padding: 8px 8px;
+    }
+}
+@media only screen and (max-width: 607px){
+    .side-nav{
+        width: 100%;
+        padding-bottom: 20%;
+    }
+    .account-list{
+        display: none;
+    }
+    .side-nav-list{
+        width: 60px;
+    }
+    .side-nav-list >li > a{
+        width: 40px;
+        display: inline-block;
+        padding: 3px 5px 3px 5px;
+    }
+    .create-btn{
+        width: 50px;
+        padding: 8px 8px;
+    }
+}

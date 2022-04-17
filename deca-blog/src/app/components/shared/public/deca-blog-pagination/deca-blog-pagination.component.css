@@ -1,0 +1,55 @@
+.bottom{
+    padding: 20px 0;
+}
+.rows{
+    margin-right: 40px;  
+}
+
+.rows img{
+    width: 7px;
+    height: 4px;
+    cursor: pointer;
+}
+
+.bottom-content{
+    margin-left: auto;
+}
+
+.numbers{
+    margin-right: 15px;
+}
+
+.numbers p,
+.rows p{
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+}
+
+.controls img{
+    width: 6px;
+    height: 12px;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.numbers {
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.controls {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+}
+
+[previousText], [nextText] {
+    font-size: 1.5rem;
+}
+
+pager {
+    color: black;
+}

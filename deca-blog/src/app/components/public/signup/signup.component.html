@@ -1,0 +1,125 @@
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="header">
+                    <p class="title">Welcome Decadev!</p>
+                    <p class="sub">Fill in the correct details below</p>
+                </div>
+                <form class="row g-3 needs-validation" (submit)="onSubmit()" [ngClass]="{'was-validated': wasValidated}" [formGroup]="signupForm"  novalidate>
+                    <div class="col-md-6 form-group">
+                      <label for="firstName" class="form-label">First Name</label>
+                      <input type="text" class="form-control" formControlName="firstName" name="firstName" id="firstName" required>
+                      <span class="iconify input-icon" data-icon="si-glyph:badge-name"></span>
+                      <div class="invalid-feedback">Required</div>
+                      <div class="input-error" *ngIf="!!errors['FirstName']">
+                        <p *ngFor="let err of errors['FirstName']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" formControlName="lastName" name="lastName" id="lastName" required>
+                      <span class="iconify input-icon" data-icon="si-glyph:badge-name"></span>
+                      <div class="invalid-feedback">Required</div>
+                      <div class="input-error" *ngIf="!!errors['LastName']">
+                        <p *ngFor="let err of errors['LastName']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" formControlName="email" name="email" id="email" required>
+                        <span class="iconify input-icon" data-icon="mdi:email-fast"></span>
+                        <div class="invalid-feedback">Required</div>
+                        <div *ngIf="f.email.touched && f.email.invalid">
+                          <div class="text-danger" style="font-size: 12px;" *ngIf="f.email.errors.decadevCheck">Invalid decadev email</div>
+                        </div>
+                        <div class="input-error" *ngIf="!!errors['Email']">
+                          <p *ngFor="let err of errors['Email']">{{err}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label for="phoneNumber" class="form-label nr">Phone Number</label>
+                      <input type="text" class="form-control" formControlName="phoneNumber" id="phoneNumber" pattern="[0][789][01][0-9]{8}" 
+                        onkeypress="numbersOnly($event)">
+                        <span class="iconify input-icon" data-icon="ant-design:phone-filled"></span>
+                        <div class="invalid-feedback">Must be a valid phone number</div>
+                        <div class="input-error" *ngIf="!!errors['PhoneNumber']">
+                          <p *ngFor="let err of errors['PhoneNumber']">{{err}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <label for="gender" class="form-label">Gender</label>
+                      <select id="gender" class="form-select select" formControlName="gender">
+                        <option value="{{gender}}" *ngFor="let gender of genders">{{ gender }}</option>
+                      </select>
+                      <div class="input-error" *ngIf="!!errors['gender']">
+                        <p *ngFor="let err of errors['Gender']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <label for="stackId" class="form-label">Stack</label>
+                      <select id="stackId" class="form-select select" formControlName="stackId">
+                        <option *ngFor="let stack of stacks" [value]="stack.Id">{{ stack.Name }}</option>
+                      </select>
+                      <div class="input-error" *ngIf="!!errors['stackId']">
+                        <p *ngFor="let err of errors['stackId']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <label for="squadId" class="form-label">Squad</label>
+                      <select id="squadId" class="form-select select" formControlName="squadId">
+                        <option *ngFor="let squad of squads" [value]="squad.Id">{{ squad.Name }}</option>
+                      </select>
+                      <div class="input-error" *ngIf="!!errors['squadId']">
+                        <p *ngFor="let err of errors['squadId']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" formControlName="password" name="password" id="password" required>
+                      <button class="icon-button" type="button" id="toggleShowIcon" (click)="toggleShowPassword('password','toggleShowIcon')" ><span class="iconify" data-icon="ant-design:eye-invisible-filled"></span></button>
+                      <div class="invalid-feedback">Required</div>
+                      <div class="input-error" *ngIf="!!errors['Password']">
+                        <p *ngFor="let err of errors['Password']">{{err}}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label for="confirmPassword" class="form-label">Confirm Password</label>
+                      <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword" id="confirmPassword" required>
+                      <button class="icon-button" type="button" id="toggleConfirmShowIcon" (click)="toggleShowPassword('confirmPassword','toggleConfirmShowIcon')"><span class="iconify" data-icon="ant-design:eye-invisible-filled"></span></button>
+                      <div class="invalid-feedback">Required</div>
+                      <div *ngIf="f.confirmPassword.touched && f.confirmPassword.invalid">
+                        <div class="text-danger" style="font-size: 12px;" *ngIf="f.confirmPassword.errors.mustMatch">Must match password</div>
+                      </div>
+                      <div class="input-error" *ngIf="!!errors['ConfirmPassword']">
+                        <p *ngFor="let err of errors['ConfirmPassword']">{{err}}</p>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12 form-group">
+                      <button type="submit" class="btn btnPrimary" *ngIf="!loading">Sign Up</button>
+                      <button class="btn btnLoading" *ngIf="loading"><img src="../../../../assets/_loaders/Spinner-5.gif" /></button>
+                      <button type="button" class="btn btnSecondary" 
+                        (click)="clearForm()" data-bs-dismiss="modal" *ngIf="!loading">Cancel</button>
+                    </div>
+                  </form>
+                  <p class="text-black-50 fw-bold">Already have an account? <a (click)="gotoLogin()" role="button">Login</a></p>
+                  <p class="input-error text-danger" *ngIf="!!errors['DuplicateUserName']">*Email '{{email.value}}' is unavailable*</p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="checkEmailModal" tabindex="-1" aria-labelledby="checkEmailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+            <div class="modal-body">
+              <img src="../../../../assets/images/bell.png" alt="bell.png" class="img-fluid">
+              <p class="verify-title">Verify your email</p>
+              <p class="verify-info">A mail has been sent to this address <span class="address">{{ confirmEmail }}</span></p>
+              <button type="button" class="btn btnPrimary" (click)="closeModal()" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+  

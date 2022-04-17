@@ -1,0 +1,241 @@
+nav {
+    background: #F8FAF2;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+    margin: 5px 0;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 4px;
+    transition: 0.5s;
+    font-size: 13px;
+    width: 100%;
+    height: 45px;
+}
+
+.btn:hover {
+    background-position: right center;
+}
+
+.btn.btnPrimary {
+    font-weight: 700;
+    background-image: linear-gradient(86.41deg, #34A853 0%, #B8D344 51%, #34A853 100%);
+    color: white;
+    box-shadow: 0px 4px 32px rgba(52, 168, 83, 0.08);    
+}
+
+.btn.btnSecondary{
+    font-weight: 600;
+    background-color: #F4F8E3;
+    color: #4C4D4E;
+    box-shadow: 0px 4px 32px rgba(52, 168, 83, 0.08);
+}
+.btn.btnSecondary:hover{
+    background-color: #4C4D4E;
+    color: #F4F8E3;    
+}
+
+.btn.btnLoading {
+    color: #fff;
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+header .btn{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    position: relative;
+}
+.form-group .icon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    right: 10px;
+    bottom: 3px;
+    color: #ACACAC;
+}
+.form-group .iconify.input-icon{
+    position: absolute;
+    pointer-events: none;
+    right: 20px;
+    top: 39px;
+    color: #ACACAC;
+}
+.form-group .icon-button {
+    position: absolute;
+    padding: 3px 5px;
+    border: none;
+    background: transparent;
+    top: 33px;
+    right: 13px;
+    color: #ACACAC;
+}
+
+label {
+    font-size: 12px;
+    line-height: 15px;
+    color: #373B56;
+}
+label::after{
+    content: ' *';
+    color: #DD5252;
+    font-size: 12px;
+    font-weight: 600;
+}
+label.nr::after {
+    content: '';
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+.select:focus {
+    box-shadow: none;
+    outline: 0 none;
+    background-color: #F1F1F1;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+.select
+ {
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    background-color: #F1F1F1;
+    text-indent: 5px;
+    font-size: 14px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] { 
+    padding-right: 33px;
+}
+
+.input-error p{
+    color: #DD5252;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.form-select.is-invalid, .was-validated .form-select:invalid {
+    background-image: none !important;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid,
+.form-select.is-valid, .was-validated .form-select:valid {
+    background-image: none !important;
+}
+
+.invalid-feedback{
+    color: #DD5252;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.modal-dialog{
+    max-width: 712px
+}
+.modal-content{
+    border-radius: 0px;
+}
+.modal-body{
+    padding: 5rem 15%;
+}
+.modal-body form{
+    margin-bottom: 15px;
+}
+.modal-body p{
+    font-size: 12px;
+}
+.modal-body a{
+    text-decoration: none;
+    color: #373B56;
+}
+.modal .header{
+    margin-bottom: 25px;
+}
+.modal .header .title {
+    font-family: 'Red Hat Display', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+    color: #373B56;
+    margin-bottom: 8px;
+}
+
+.modal .header .sub {
+    /* font-family: Mulish; */
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A6A6A6;
+}
+
+#checkEmailModal .modal-body {
+    text-align: center;
+}
+
+#checkEmailModal .modal-body .verify-img{
+    width: 388px;
+    margin-right: 0;
+}
+
+#checkEmailModal .modal-body .verify-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    color: #373B56;
+    margin-bottom: 8px;
+    margin-top: -16px;
+}
+#checkEmailModal .modal-body .verify-info{ color: #8E8E8E;  }
+#checkEmailModal .modal-body .verify-info .address{ color: #373B56;}
+
+input.ng-invalid.ng-touched,
+.select.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+@media only screen and (min-width: 450px){
+    .btn{
+        width: 110px;
+        height: 45px;
+        margin: 10px 10px 10px 0;
+    }
+    #checkEmailModal .modal-body .verify-title {
+        font-size: 30px;
+    }
+    #checkEmailModal .modal-body .verify-info{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .modal-body{
+        padding: 5rem 20%;
+    }
+    .btn{
+        width: 132px;
+        height: 47px;
+        font-size: 14px;
+    }
+    #checkEmailModal .modal-body .verify-title {
+        font-size: 32px;
+    }
+}

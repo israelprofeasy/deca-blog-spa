@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+@media screen and (max-width: 768px) { 
+    /* Here are some changes*/
+    #bg {
+        background-image: url("https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 262px;
+        width: 100%;
+    }
+
+    #avatar .twPc-avatarLink {
+        border-radius: 6px;
+        display: inline-block !important;
+        float: left;
+        margin: -30px 5px 0 8px;
+        max-width: 100%;
+        padding: 1px;
+        vertical-align: bottom;
+    }
+
+    #stack .twPc-avatarImg {
+        height: 75px;
+        width: 75px;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+    
+    .twPc-divName a {
+        color: inherit !important;
+    }
+
+    #stack{
+        display: inline;
+        padding-left: 30px;
+    }
+
+    .follow{
+        margin-top: 50px;
+        width: 100%;
+        background: #C4C4C4;
+        border-radius: 8px;
+        background: #ffffff;
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    #bg {
+        background-image: url("https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 262px;
+        width: 100%;
+    }
+
+    #avatar .twPc-avatarLink {
+        border-radius: 6px;
+        display: inline-block !important;
+        float: left;
+        max-width: 100%;
+        padding: 1px;
+        vertical-align: bottom;
+    }
+
+    #stack .twPc-avatarImg {
+        height: 75px;
+        width: 75px;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+
+    #stack .twPc-divName span {
+        font-style: normal;
+        font-family: Mulish;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.4px;
+    }
+    
+    .twPc-divName a {
+        color: inherit !important;
+    }
+
+    #stack{
+        display: inline-flex;
+    }
+
+    #stack .follow{
+        margin-top: 30px;
+        width: 50%;
+        background: #C4C4C4;
+        border-radius: 8px;
+        background: #ffffff;
+    }
+}
+
+body{
+    box-shadow: 10px 10px 5px red;
+}
+
+a{
+    text-decoration: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.follow{
+    margin-top: 30px;
+    margin-left: 30px;
+    background: #C4C4C4;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.follow .text{
+    text-align: left;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.twPc-div {
+    background: #fff none repeat scroll 0 0;
+    position: relative;
+    border-radius: 6px;
+    height: 100%;
+    max-width: 100%;     
+    width: 90%;
+    margin-left: 5%;
+}
+
+.twPc-bg {
+    background-image: url("https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 262px;
+    width: 100%;
+}
+
+.twPc-block {
+    display: block !important;
+}
+
+.twPc-button {
+    margin: -35px -10px 0;
+    text-align: right;
+    width: 100%;
+}
+
+.twPc-avatarLink {
+    border-radius: 6px;
+    display: inline-block !important;
+    float: left;
+    margin: -30px 5px 0 8px;
+    max-width: 100%;
+    padding: 1px;
+    vertical-align: bottom;
+}
+
+.twPc-avatarImg {
+    border: 5px solid #FFFFFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #fff;
+    height: 172px;
+    width: 172px;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.twPc-divUser {
+    margin: 20px 0 0;
+}
+
+.twPc-divName span {
+    font-style: normal;
+    font-family: Mulish;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.4px;
+}
+
+.twPc-divName .small{
+    font-style: normal;
+    font-family: Mulish;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.4px;
+}
+
+.twPc-divName a {
+    color: inherit !important;
+}
+
+.twPc-divStats {
+    margin-left: 11px;
+    padding: 10px 0;
+}
+
+.twPc-Arrange {
+    box-sizing: border-box;
+    display: table;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    table-layout: auto;
+}
+
+ul.twPc-Arrange {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.twPc-ArrangeSizeFit {
+    display: table-cell;
+    padding: 0;
+    vertical-align: top;
+}
+
+.twPc-ArrangeSizeFit a:hover {
+    text-decoration: none;
+}
+
+.twPc-StatValue {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.15s ease-in-out 0s;
+}
+
+.twPc-StatLabel {
+    color: #8899a6;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: color 0.15s ease-in-out 0s;
+}
+
+.btn .btnPrimary {
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+    color: white;
+    box-shadow: 0px 4px 32px rgba(52, 168, 83, 0.08);
+}
+
+.twPc-button .iconify{
+    margin-top: -5px;
+    font-size: 1.5em;
+}
+
+.follow .iconify{
+    font-size: 1.5em;
+}
+
+.btn.btnTertiary{
+    background-color: #F3F3F3;
+    box-shadow: 0px 4px 32px rgba(52, 168, 83, 0.08);
+}
+
+.btn.btnTertiary:hover{
+    background-color: #000000;
+    color: #F3F3F3;
+}
+
+.twPc-button .btn.btnTertiary{
+    margin-top: -75px;
+}

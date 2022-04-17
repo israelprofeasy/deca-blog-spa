@@ -1,0 +1,55 @@
+.reply-box {
+    margin: 10px 0;
+    padding-left: 16px;
+    border-left: 2px solid #D8D8D8;
+}
+.reply-box .wrapp{
+    width: 100%;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    padding: 16px;
+}
+
+.comment-input #comment {
+    resize: none;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+}
+
+.comment-input #comment:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.comment-input #comment::-webkit-scrollbar {
+    display: none;
+}
+
+.comment-tools span{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.comment-tools button {
+    margin: 0 3px;
+    font-size: 14px;
+}
+.comment-tools .buttons #cancel,
+.comment-tools .buttons #reply{
+    background: none;
+    border: none;
+}
+.comment-tools .buttons #cancel {
+    font-weight: 500;
+}
+.comment-tools .buttons #reply {
+    font-weight: 600;
+}
+.comment-tools .buttons  #respond{
+    background:linear-gradient(to right, #39bd55,#b4ee5e);
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    border: none;
+}

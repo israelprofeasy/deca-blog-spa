@@ -1,0 +1,227 @@
+.article {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  border-bottom: 1px solid rgb(224, 223, 223);
+  padding-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 210px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.inner-main {
+  display: flex;
+  justify-content: space-around;
+  height: 180px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.header-img {
+  width: 180px;
+}
+
+.heading {
+  margin: 0 auto;
+  width: 60%;
+  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  height: 210px;
+}
+
+.heading h1 {
+  font-size: 30px;
+}
+
+.articletext {
+  margin-top: 180px;
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.subtopics {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: sticky;
+  top: 200px;
+  align-self: flex-start;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 400px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+#subtopics:fOCUS .mouse-scroll {
+  display: block;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.subtopics::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.subtopics {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.subtopics a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: rgb(73, 66, 66);
+  font-weight: bold;
+  font-size: large;
+}
+
+.sub {
+  margin-bottom: 10px;
+}
+
+.text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.single {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.single h1 {
+  font-size: 25px;
+  color: rgb(73, 66, 66);
+}
+.single a {
+  text-decoration: none;
+}
+
+.not-found {
+  text-align: center;
+  padding: 5px;
+  font-weight: 400;
+  color: red;
+  font-size: 30px;
+  margin-top: 200px;
+}
+#main-bg,
+#heading {
+  position: absolute;
+  width: 100vw;
+}
+#main-bg {
+  top: -100px;
+}
+#main-bg img {
+  width: 100%;
+}
+.inner-heading {
+  width: 60%;
+  margin: 0px auto;
+}
+.name {
+  color: #2cbb4b;
+}
+.icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+}
+.iconify {
+  font-size: large;
+}
+#up {
+  color: #2cbb4b;
+  transition-duration: 0.6s;
+}
+#comment {
+  color: grey;
+}
+#sub-topics-list:hover {
+  cursor: pointer;
+}
+.add-contribution-btn{
+  display: flex !important ;
+  align-items: center !important;
+  text-align: center !important;
+  background: var(--green-gradient);
+  text-decoration: none;
+  border-radius: 4px !important;
+  width: 200px;
+  margin-left: 1rem;
+  font-size: medium;
+  font-weight: 500;
+  padding: 16px 16px !important;
+  color: #fff !important ;
+  height: 45px;
+  border: 0px;
+}
+
+.single h1{
+    font-size: 25px;
+    color: rgb(73, 66, 66);
+}
+.single a{
+    text-decoration: none;
+}
+.text button{
+    width:fit-content; 
+    margin-left:3%;
+    padding:5px;
+    color:#fff;
+    background:var(--green-gradient); 
+    border-color:#fff; 
+    border-radius:var(--border-rad)
+}
+.not-found{
+    text-align: center;
+    padding: 5px;
+    font-weight: 400;
+    color: red;
+    font-size:30px;
+    margin-top: 200px;
+}
+#main-bg, #heading{
+    position: absolute;
+    width: 100vw;
+}
+#main-bg{
+    top: -100px;
+}
+#main-bg img{
+    width: 100%;  
+}
+.inner-heading{
+    width: 60%;
+    margin: 0px auto;
+}
+.name{
+    color: #2cbb4b;
+}
+.icons{
+    margin-top: 30px;
+    display: flex;
+    gap: 40px;
+}
+.iconify{
+    font-size: large;
+    cursor: pointer;
+}
+#up{
+    color:#2cbb4b;
+    transition-duration:.6s;
+}
+#comment{
+    color: grey;
+}

@@ -1,0 +1,39 @@
+
+<div class="invite-user-wrapper">
+   <div class="col-md-12 form-group">
+   <form [formGroup]="inviteForm" (ngSubmit)="inviteUser()">
+      <div class="form-group ">
+         <div class="img-wrapper"> 
+               <img class="iconImg" src="../../../../assets/images/avartar.png" />
+               <span class="dots"><i class="fa fa-plus"></i></span>
+               <div>
+                  <h3>Invite User</h3> 
+               </div>
+        </div>
+      <div class="input-wrapper">
+         <span class="valid-email">Please fill out a valid email</span>
+             <label for="email" class="form-label">Email</label>
+            
+             <input type="text" class="form-control" formControlName="email" name="email" id="email" required>
+               <span class="iconify input-icon" data-icon="mdi:email-fast"></span>
+            
+               <div *ngIf="formSubmitted && inviteForm.invalid">
+                  <span class="text-danger" *ngIf="formControls['email'].errors.required">Email is required</span>
+                  <span class="text-danger" *ngIf="formControls['email'].errors.email">Enter a valid email</span>
+               </div>
+         <div class="btn-wrapper"> 
+         
+            <button *ngIf="!loading" type="button" type="submit" class="btn">Invite</button> 
+            <button *ngIf="loading" disabled type="submit" class="btn">Inviting ...</button>
+         </div>
+      </div>
+   </div>
+   </form>
+   </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+    <div class="container" *ngIf="!loadingInfo else loading">
+        <div >
+          <form *ngIf="!errorLoading else errLoading">
+            <div class="wrappe m-auto ">
+                <div class="page-title">
+                    <span class="iconify" data-icon="bx:user-circle"></span>
+                      Invitee
+                  </div>
+                <div class="info-wrapper">
+                    <div class="info-img m-auto">
+                        <img src="../../../../assets/images/avartar.png" class="img-fluid" alt="personal photo">
+                    </div>
+                    <div>
+                      
+                        <div>
+                          <p class="info-title">Personal Info</p>
+                          <br>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="firstname">First Name</label>
+                            <p class="detail">{{invitee.FirstName}}</p>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="lastname">Last Name</label>
+                            <p class="detail">{{invitee.LastName}}</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="gender">Email</label>
+                            <p class="detail">{{invitee.Email}}</p>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="phone">Phone</label>
+                            <p class="detail"></p>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="email">Stack</label>
+                            <p class="detail">{{invitee.Stack}}</p>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="squad">Squad</label>
+                            <p class="detail">{{invitee.Stack}}</p>
+                          </div>
+                        </div>
+                        <div class="row button">    
+                            <div class="d-flex justify-content-end buttons">
+                                <button class="btn btnTertiary" (click) = "goBack()">Cancel</button>
+                                <a class="btn btnPrimary" (click) ="approveInvitee()">Approve</a>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>   
+          </form>
+
+          <ng-template #errLoading>
+            <div class="blocktext">
+              <p>Something went wrong
+                Please <a id="reload-anchor" style="color: rgb(106, 106, 236);" (click)="reloadCurrentPage()"><u>click here</u></a> to reload page.
+                </p>
+            </div>
+          </ng-template>
+
+        </div>   
+      </div>
+      <ng-template #loading>
+        <app-loading-profile></app-loading-profile>
+      </ng-template>
+     
+     

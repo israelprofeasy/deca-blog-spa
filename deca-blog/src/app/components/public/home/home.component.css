@@ -1,0 +1,20 @@
+.home-style{
+    margin: 0 80px; 
+}
+
+
+
+hr{
+    width: 53rem;
+    height: 0.07rem;
+    background-color : #aaa;
+}
+
+.articles {
+    padding-right : 5%;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }

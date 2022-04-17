@@ -1,0 +1,19 @@
+.container{
+    
+    margin: 0 auto;
+    /* padding: 20px 10px; */
+    padding: 0;
+    background-color: #f1f1f1;
+  
+}
+
+.content{
+    width: 100%;
+    background-color: #fff;    
+    padding: 2%;
+}
+.no-topics{
+    text-align: center;
+    padding: 7px;
+    color: var(--solid-green);
+}

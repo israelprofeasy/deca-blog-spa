@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600;700&family=Red+Hat+Display:wght@500&display=swap');
+
+.name {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.3125rem;
+    color: #373b56;
+}
+
+.stack-squad {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.2px;
+    color: #373b56;
+}
+
+th {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.0825rem;
+    letter-spacing: 0.2px;
+    color: #9fa2b4;
+}
+
+@media (max-width: 420px){
+    img {
+        width: 100%;
+    }
+}
+thead {
+    border-bottom-width: 1px;
+  }
+
+  .table th { border-top: none; }
+
+.name:hover, .email:hover, .squad:hover, .stack:hover, a:hover{
+    cursor: pointer;
+    color: var(--solid-green);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.sort, .filter{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.sorts, .filters {
+    cursor: pointer;
+}
+
+/* ============== */
+.header {
+    margin: 20px 0;
+}
+.page-title {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+}
+.page-tools .btn .iconify {
+    color: #C5C7CD;
+    margin-right: 5pt;
+}

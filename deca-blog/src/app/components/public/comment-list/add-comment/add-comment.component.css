@@ -1,0 +1,78 @@
+.wrapp{
+    width: 100%;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    padding: 16px;
+}
+
+.commenter {
+    margin-bottom: 16px;
+}
+.commenter .details {
+    column-gap: 10px;
+    align-items: center;
+}
+.commenter .details .photo {
+    width: 56px;
+    height: 56px;
+}
+.commenter p {
+    margin-bottom: 0;
+}
+.commenter .details .info .name {
+    font-family: 'Poppins', sans-serif;
+    color: #252F40;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+.commenter .details .info .role {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: #6F7785;
+}
+
+.comment-input #comment {
+    resize: none;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+}
+
+.comment-input #comment:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.comment-input #comment::-webkit-scrollbar {
+    display: none;
+}
+
+.comment-tools span{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.comment-tools button {
+    margin: 0 3px;
+    font-size: 14px;
+}
+
+.comment-tools .buttons #cancel{
+    background: none;
+    border: none;
+}
+.comment-tools .buttons  #respond{
+    background:linear-gradient(to right, #39bd55,#b4ee5e);
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    border: none;
+}
+#cancel:hover{
+    cursor: pointer;
+}
+.add-comment-btn:hover{
+ cursor: pointer;
+}

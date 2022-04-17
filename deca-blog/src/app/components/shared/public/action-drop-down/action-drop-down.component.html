@@ -1,0 +1,10 @@
+<!--Drop down toggle-->
+<div class="dropdown show p-0 flex-column my-auto btn-group">
+    <span class="fs-2 mb-2 my-auto mx-auto" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #252f40;">
+      &#8230;
+    </span>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+      <div class="actions-title"><b>Actions</b></div>
+      <a class="dropdown-item" *ngFor="let data of dropdownData" (click) ="data.action(actionData)">{{data.name}}</a>
+    </div>
+  </div>

@@ -1,0 +1,69 @@
+<div class="wrapper">
+    <h2>Overview</h2>
+    <div class="main-container">
+        <div class="card one">
+            <div class="ctop">
+                <div class="icon-text">
+                    <div class="icon"><img src="../../../../assets/images/bxs_user.svg"/> </div>
+                    <div class="text">Total Users</div>
+                </div>
+                <div class="per">+{{overviewData.UserIncrease}}%</div>
+            </div>
+            <div class="cbtm">{{overviewData.TotalUsers}}</div>
+        </div>
+        <div class="card two">
+            <div class="ctop">
+                <div class="icon-text">
+                    <div class="icon"><img src="../../../../assets/images/ic_outline-article.svg"/> </div>
+                    <div class="text">Total Article Topics</div>
+                </div>
+                <div class="per">+{{overviewData.ArticleIncrease}}%</div>
+            </div>
+            <div class="cbtm">{{overviewData.TotalArticles}}</div>
+        </div>
+        <div class="card three">
+            <div class="ctop">
+                <div class="icon-text">
+                    <div class="icon"><img src="../../../../assets/images/ooui_user-contributions-ltr.svg"/> </div>
+                    <div class="text">Total Contributions</div>
+                </div>
+                <div class="per">+{{overviewData.ContributionsIncrease}}%</div>
+            </div>
+            <div class="cbtm">
+                {{overviewData.TotalContributions}}
+            </div>
+        </div>
+        <div class="card four">
+            <div class="ctop">
+                <div class="icon-text fit">
+                    <div class="text">De-Activation Requests</div>
+                </div>
+            </div>
+            <div class="cbtm">{{overviewData.DeactivationRequest}}</div>
+        </div>
+        <div class="card five">
+            <div class="ctop">
+                <div class="icon-text">
+                    <div class="icon"><img src="../../../../assets/images/ic_outline-pending-actions.svg"/> </div>
+                    <div class="text">Pending Contributions</div>
+                </div>
+                <div class="per">+{{overviewData.PendingContributionsIncrease}}%</div>
+            </div>
+            <div class="cbtm">{{overviewData.PendingContributions}}</div>
+        </div>
+        <div class="card six">
+            <div class="ctop">
+                <div class="icon-text">
+                    <div class="icon"><img src="../../../../assets/images/carbon_task-approved.svg"/> </div>
+                    <div class="text">Approved Contributions</div>
+                </div>
+                <div class="per">+{{overviewData.ApprovedContributionsIncrease}}%</div>
+            </div>
+            <div class="cbtm">{{overviewData.ApprovedContributions}}</div>
+        </div>
+        <div class="card seven">
+            <canvas id="myChart" height="200px"></canvas>
+        </div>
+    </div>
+  
+ </div>

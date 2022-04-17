@@ -1,0 +1,33 @@
+<div class="comment-div">
+    <div class="commenter d-flex justify-content-between align-items-center">
+      <div class="details d-flex">
+        <div class="photo">
+          <img class="img-fluid" style="border-radius: 50%;" src="{{comment.Commentator.PhotoUrl}}" alt="">
+        </div>
+        <div class="info">
+          <p class="name">{{ comment.Commentator.FullName }}</p>
+          <!-- <p class="role">Stack Lead Java</p> -->
+          <p class="time"> {{ comment.CreatedAt | date }}</p>
+        </div>
+      </div>
+      <div class="more">
+        <span class="iconify" data-icon="fluent:more-horizontal-28-filled"></span>
+      </div>
+    </div>
+    <div class="comment-text">
+      <p>{{ comment.CommentText }}</p>
+    </div>
+    <!-- <div class="comment-tools d-flex justify-content-between align-items-center">
+      <div class="edit">                  
+        <span id="like" class="iconify" data-icon="ant-design:like-filled"></span> {{ comment.Votes }}
+        <span id="dislike" class="iconify" data-icon="ant-design:dislike-filled"></span> 19
+      </div>
+      <div class="buttons">
+        <button (click)="handleOpenReply()" [id]="comment.Id" id="reply" class="reply-btn" >Reply</button>
+      </div>
+    </div>      -->
+  </div>
+
+  <!-- Reply Box -->
+    
+

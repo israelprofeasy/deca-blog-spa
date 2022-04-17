@@ -1,0 +1,12 @@
+<div class="container-fluid mt-5 pt-3">
+  <app-topbar></app-topbar>
+  <app-contribution-list [contributions]="contributions" [dropdownData]="dropdownData"></app-contribution-list>
+  <decablog-pagination
+  [data]="pageMetaData"
+  (onNewPageNumber)="handlePageChange($event)"
+  (onPerPageChanged)="handlePerPageChange($event)"
+  *ngIf="pageMetaData">
+</decablog-pagination>
+</div>
+
+

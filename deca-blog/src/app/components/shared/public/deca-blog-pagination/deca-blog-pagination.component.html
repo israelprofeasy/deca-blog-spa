@@ -1,0 +1,36 @@
+<div class="bottom d-flex" *ngIf="data">
+    <div class="d-flex bottom-content d-flex align-items-center">
+        <!-- <div class="rows">
+            <p>Rows per page: <select (change)="changePerPage($event)" [value]="data.PerPage">
+                <option *ngFor="let p of data.PageDropDwonOptions" [value]="p">{{p}}</option>
+            </select> </p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center"> 
+            <div class="numbers">
+                <p>{{data.Page}}-{{data.Page*data.PerPage}} of {{data.Total}}</p>
+            </div>
+            <div class="controls">
+                <pagination  (pageChanged)="pageChanged($event)" 
+                [(ngModel)]="data.Page"
+                 [totalItems]="data.Total"
+                [maxSize]="maxSize"
+                [align]="true"
+                pageBtnClass = 'btn fs-3'
+                previousText="&lsaquo;" 
+                nextText="&rsaquo;" 
+                [itemsPerPage] = "data.PerPage"
+                 *ngIf="data">
+                </pagination>      
+            </div>
+        </div> -->
+        <p-paginator 
+    [rows] = "data.PerPage" 
+    [totalRecords]="data.Total" 
+    (onPageChange) ="pageChanged($event)"
+    [first] = "1"
+    [rowsPerPageOptions]= "[10,20,30,40,50,{showAll:'All'}]"
+    [showFirstLastIcon] = "true"
+    *ngIf="data.TotalPages">
+    </p-paginator>
+    </div>
+</div>

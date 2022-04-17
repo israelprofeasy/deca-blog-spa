@@ -1,0 +1,67 @@
+<div class="row m-3">
+    <!--Start of header section-->
+    <div class="header d-flex justify-content-between">
+      <div class="page-title">
+        <i class="fa fa-user my-auto fs-4 p-2"></i>
+            Users
+      </div>
+      <div class="page-tools d-flex">
+        <app-user-search-bar [pageData]="pageData"  (searchResult)="initializeSearchResults($event)"></app-user-search-bar>
+        <button class="btn"><span class="iconify" data-icon="fa-solid:sort-amount-up"></span>Sort</button>              
+        <button class="btn"><span class="iconify" data-icon="fa:filter"></span>Filter</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="table-responsive">
+        <table class="table table-hover ">
+        <p-progressBar mode="indeterminate" [style]="{height: '4px'}" *ngIf="loadingInfo"></p-progressBar>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col-3 text-muted"></th>
+              <th scope="col-3 text-muted">Name</th>
+              <th scope="col-2 text-muted">Squad</th>
+              <th scope="col-2 text-muted">Stack</th>
+              <th scope="col-1"></th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!!searchResults">
+            <tr class="my-auto" *ngFor="let res of searchResults.Data">
+              <td class="col-3">
+                <div class="d-flex justify-content-center">
+                  <img class="img-fluid rounded-circle" src="{{res.Photo}}" alt="{{res.FirstName}}">
+                </div>
+              </td>
+              <td class="col-3 align-middle email">{{res.FirstName}} {{res.LastName}}</td>
+              <td class="col-2 align-middle squad">{{res.Squad}}</td>
+              <td class="col-2 align-middle stack">{{res.Stack}}</td>
+              <td class="col-1 align-middle mx-auto my-auto">
+                <action-drop-down [dropdownData] = "dropDownActions" [actionData]="res.Id"></action-drop-down>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--Pagination-->
+        <decablog-pagination 
+          [data]="pageMetaData" 
+          (onPageChanged) = "handlePerPageChanged($event)" 
+          (onNewPageNumber)="handleNewPageNumber($event)">
+        </decablog-pagination>
+        
+    <!--End of Div Table-->
+  <ng-template #loading>
+    <div class="loading-wrapper" class="blocktext">
+      <div class="img-wrapper">
+         <img id="imgs"  class ="loadingImg" src="../../assets/images/loadingImg01.svg">
+      </div>
+    
+    </div>
+  </ng-template>
+  <ng-template #errorLoading>
+    <div class="blocktext">
+      <p>Something went wrong
+        Please <a id="reload-anchor" style="color: rgb(106, 106, 236);" (click)="reloadCurrentPage()"><u>click here</u></a> to reload page.
+  </p>
+  </div>
+  </ng-template>

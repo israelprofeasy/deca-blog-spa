@@ -1,0 +1,26 @@
+.wrapper
+{
+  background-color: white;
+}
+#sub-topic-wrapper:hover{
+  cursor: pointer;
+}
+#pending-modal{
+  height: 300px;
+  overflow:auto;
+}
+/* Chrome, safari */
+#pending-modal::-webkit-scrollbar {
+	width:5px;
+}
+
+#pending-modal::-webkit-scrollbar-thumb {
+	background-color: linear-gradient(86.41deg, #34a853 49.38%, #b8d344 98%) !important;
+}
+.rmvlnk a{
+  text-decoration: none;
+}
+
+/* .btn, .btn:hover, .btn:active, .btn:visited {
+  background-color: green !important;
+} */

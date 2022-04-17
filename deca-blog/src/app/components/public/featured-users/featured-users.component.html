@@ -1,0 +1,33 @@
+<div class="active-user-container">
+    <h3>Featured Users</h3>
+    <div   *ngIf="!loading else doneLoading">
+     <div class="wrapper" *ngIf="!isUserLoggedIn()" (click)="modalService.open('login')">
+        <div 
+            [routerLink]="['/profile', item.Id]"
+            data-mdb-toggle="tooltip" 
+            data-mdb-placement="bottom" 
+            class="img-contianer"
+            title="{{item.FirstName + ' '+ item.LastName}}" 
+            *ngFor="let item of featuredUsersArray">
+            <img src="{{item.Photo}}" class="img-fluid">
+        </div>
+     </div>
+     <div class="wrapper" *ngIf="isUserLoggedIn()">
+        <div 
+            [routerLink]="['/profile', item.Id]"
+            data-mdb-toggle="tooltip" 
+            data-mdb-placement="bottom" 
+            class="img-contianer"
+            title="{{item.FirstName + ' '+ item.LastName}}" 
+            *ngFor="let item of featuredUsersArray">
+            <img src="{{item.Photo}}" class="img-fluid">
+        </div>
+     </div>
+    </div>
+</div>
+<ng-template #doneLoading>
+    <div class="wrapper" style="overflow: hidden;">
+        <app-featured-users-loader *ngFor="let item of [1,2,3,4,5,6,7,8]"></app-featured-users-loader>
+    </div>
+</ng-template>
+

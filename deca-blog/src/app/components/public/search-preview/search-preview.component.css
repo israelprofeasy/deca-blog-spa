@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+#search-header{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 78px;
+    color: #261C1C;
+}
+
+.article-preview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.article-item {
+    width: 100%;
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+   
+    align-items: center;
+}
+  
+.article-item .image {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+}
+  
+.article-item .title {
+    width: 250px;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+}
+
+.article-footer {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 50px;
+}  
+
+.article-footer .author {
+    width: 55%;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+    padding-left: 2%;
+}
+  
+.article-footer .date {
+    width: 40%;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.article-footer .thumbnail{
+    width: 20px;
+    height: 20px;
+}
+
+.article-footer .partition{
+    width: 5%;
+    margin-top: -5px;
+    color: #000000;
+}
+
+button:focus {border: 0; outline:none; box-shadow:none;}
+input:focus {border: 0; outline:none; box-shadow:none;}
+
+/* search box */
+
+.input-group {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.icon {
+    padding: 15px 5px 10px 10px;
+    color: #261C1C;
+    min-width: 25px;
+    text-align: center;
+}
+
+.form-control{
+    border: none;
+    margin-top: 10px;
+}
+
+.partition{
+    margin-top: 13px;
+    color: #C4C4C4;
+}
+
+.not-found{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #DD5252;
+}
+
+.lead{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #171825;
+}
+
+.term{
+    background-color: #34A853;
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+::selection, select:focus::-ms-value {
+    background-color: #34A853;
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+}
+  
+option:checked {
+    color: #34A853;
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+}
+  
+option:checked:hover, select:focus option:checked:hover {
+    background-color: #34A853;
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background-color: #34A853;
+    background-image: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+}
+
+a{
+    text-decoration: none;
+}

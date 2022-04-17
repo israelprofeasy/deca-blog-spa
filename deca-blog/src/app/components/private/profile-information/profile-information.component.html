@@ -1,0 +1,22 @@
+<div class="container wrapper mt-5" id="profile-card">
+    <h6 class="title">Profile Information</h6>
+    <p class="bio">
+        Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. 
+        If two equally difficult paths, choose the one more painful in the short term 
+        (pain avoidance is creating an illusion of equality).
+    </p>
+    <hr/>
+    <div>
+        <p class="inner-text"><span class="placeholders">Full Name:</span> {{result?.FirstName + " " + result?.LastName}}</p>
+        <p class="inner-text"><span class="placeholders">Mobile:</span> {{result?.PhoneNumber}}</p>
+        <p class="inner-text"><span class="placeholders">Email:</span> {{result?.Email}}</p>
+        <p class="inner-text"><span class="placeholders">Location:</span> {{result?.Address.State}}</p>
+
+        <div class="social-media">
+            <p class="inner-text"><span class="placeholders">Social:</span></p>
+            <div><span class="iconify" data-icon="logos:linkedin-icon"></span></div>
+            <div><span class="iconify" data-icon="logos:twitter"></span></div>
+            <div><span class="iconify" data-icon="akar-icons:github-fill"></span></div>
+        </div>        
+    </div>
+</div>  

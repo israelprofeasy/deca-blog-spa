@@ -1,0 +1,60 @@
+ <div class="row m-3 wrapper">
+    <!--Start of header section-->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+
+              <th scope="col-3 text-muted">Sub Topic</th>
+              <th scope="col-2 text-muted">Topic</th>
+              <th scope="col-2 text-muted">Author</th>
+              <th scope="col-2 text-muted">Date</th>
+              <th scope="col-1"></th>
+            </tr>
+          </thead>
+          <tbody  >
+            <tr class="my-auto" *ngFor="let item of contributions">
+              <td class="col-3 align-middle" id="sub-topic-wrapper" (click)="updateContribution(item.Subtopic, item.ArticleText, item.ArticleId)" data-toggle="modal" data-target="#exampleModalCenter" title="{{item.Subtopic}}">{{item.Subtopic.substring(0,30)}}...</td>
+              <td class="col-4 align-middle rmvlnk name" title="{{item.Topic}}"><a [routerLink]="['/articles', item.TopicId]">{{item.Topic.substring(0,30)}}...</a></td>
+              <td class="col-4 align-middle name" title="{{item.Contributor.FirstName}} {{item.Contributor.LastName}}">{{item.Contributor.FirstName}} {{item.Contributor.LastName}}</td>
+              <td class="col-2 align-middle stack-squad">{{ item.DateCreated | date : 'd MMM y' }} <br><span class="text-muted" style="font-size: small;">{{item.DateCreated | date: 'h:mm a'}}</span></td>
+              <td class="col-1 align-middle mx-auto my-auto">
+                <action-drop-down [dropdownData]="dropdownData" [actionData]="item.ArticleId"></action-drop-down>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+        <decablog-pagination 
+            [data] = "paginationMetaData"
+            (onPageChanged) = "handleNewPageNumber($event)"
+        >
+        </decablog-pagination>
+      </div>
+    </div>
+      
+
+                <!-- Modal -->
+    <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">{{contribution.subtopic}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"  [innerHTML]="contribution.text" id="pending-modal">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-toggle="modal" data-target="#exampleModalCenter"  (click)="dropdownData[0].action(contribution.id)" class="btn btn-success" >Approve</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--End of Div Table-->
+  </div>

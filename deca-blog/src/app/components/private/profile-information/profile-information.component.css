@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@media screen and (max-width: 900px) { 
+    /* Here are some changes*/
+    #profile-card{
+        width:calc(230px);
+        margin-top: 15px;
+        margin-left: -50px;
+    }
+
+    #profile-card .inner-text .placeholders{
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: -0.387234px;
+        color: #67748E;
+        margin-right: 5px;
+    }
+
+    #profile-card p{
+        font-size: 13px;
+        word-wrap: break-word;
+    } 
+}
+
+@media screen and (max-width: 768px) { 
+    /* Here are some changes*/
+    #profile-card{
+        width:calc(230px);
+        margin-top: 15px;
+        margin-left: -50px;
+    }
+
+    #profile-card .inner-text .placeholders{
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.387234px;
+        color: #67748E;
+        margin-right: 5px;
+    }
+
+    #profile-card p{
+        font-size: 12px;
+        word-wrap: break-word;
+    } 
+}
+
+@media screen and (max-width: 480px) { 
+    /* Here are some changes*/
+    #profile-card{
+        width: 170px;
+        margin-top: 15px;
+        margin-left: -50px;
+    }
+
+    #profile-card .inner-text .placeholders{
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 18px;
+        letter-spacing: -0.387234px;
+        color: #67748E;
+        margin-right: 5px;
+    }
+
+    #profile-card p{
+        font-size: 11px;
+        word-wrap: break-word;
+    } 
+}
+
+.wrapper{
+    width: 85%;
+    margin-right: 57%;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.inner-text{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.387234px;
+    color: #252F40;
+}
+
+.inner-text .placeholders{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.387234px;
+    color: #67748E;
+    margin-right: 20px;
+}
+
+.bio{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.387234px;
+    color: #67748E;
+}
+
+.title{
+    text-align: left;
+    margin-top:8px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.442553px;
+    color: #252F40;
+}
+
+.social-media{
+    display: flex;
+}
+
+.social-media div{
+    margin-top: -5px;
+    margin-right: 10px;
+    cursor: pointer;
+}

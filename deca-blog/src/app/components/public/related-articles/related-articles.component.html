@@ -1,0 +1,44 @@
+<div class="container-fluid" >
+  <!-- start row -->
+  <div class="relative-article-container">
+    <h3 class="p-5">Recommended Articles</h3>
+    <h5 class="p-5 font-italic" *ngIf="relatedArticlesDisplay.length<=0">No related articles found </h5>
+    <div class="row">
+      <!-- cards alignment -->
+      <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 m-5" *ngFor="let item of relatedArticlesDisplay">
+        <div class="card">
+          <div class="route-wrapper">
+            <div class="article-image">
+              <img style="width:auto" *ngIf="checkImage(item.CoverPhotoUrl)" src={{item.CoverPhotoUrl}} alt=""
+                style="width:180px; height:160px;">
+              <img *ngIf="!checkImage(item.CoverPhotoUrl)" src="https://picsum.photos/seed/picsum/277/237??random=2"
+                class="img-fluid">
+            </div>
+            <div class="card-body">
+              <p class="card-title">
+                <a href="articles/{{item.TopicId}}">{{formatTopic(item.Topic)}}</a>
+                <p>
+            </div>
+          </div>
+          <!-- card footer -->
+          <div class="bottom-details route-wrapper" [routerLink]="['/user', item.Author.AuthorId]">
+            <img *ngIf="!checkImage(item.Author.AuthorPhotoUrl)" src={{item.Author.AuthorPhotoUrl}} class="thumbnail"
+              alt="">
+            <p class="inner-text">{{item.Author.FullName}}</p>
+            <p class="inner-text">|</p>
+            <p class="inner-text">{{item.CreatedDate | date}}</p>
+          </div>
+
+        </div>
+
+
+        <!-- alignment close -->
+
+      </div>
+      <!-- close row -->
+    </div>
+
+  </div>
+
+
+</div>

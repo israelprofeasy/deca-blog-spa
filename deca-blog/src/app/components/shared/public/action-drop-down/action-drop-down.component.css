@@ -1,0 +1,19 @@
+.actions-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-item{
+    cursor: pointer;
+    color: black;
+}
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+  background: linear-gradient(to right, #34A853 49.38%,#B8D344 98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dropdown-item:hover {
+    background: linear-gradient(to right, #34A853 49.38%,#B8D344 98%);
+    color: #fff;
+}

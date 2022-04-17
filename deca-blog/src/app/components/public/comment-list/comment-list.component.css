@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+.modal.right .modal-dialog {
+    position: absolute;
+    right: 30px !important;
+    top: 30px !important;
+
+    padding-bottom: 100px;
+}
+.modal.right.fade:not(.show) .modal-dialog {
+    -webkit-transform: translate(100%,0)scale(1);
+    transform: translate(100%,0)scale(1);
+}
+
+.modal-header {
+    border: none;
+    padding: 2rem 2rem 0 2rem;
+}
+.modal-header .btn-close {
+    opacity: 1;
+}
+.modal-header .btn-close:hover {
+    opacity: .5;
+}
+
+.modal-dialog {
+    width: 390px;
+}
+
+.modal-body {
+    padding: 1rem 2rem 2rem 2rem;
+}
+.modal-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+}

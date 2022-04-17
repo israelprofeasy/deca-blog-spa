@@ -1,0 +1,73 @@
+
+.commenter {
+    margin-bottom: 16px;
+}
+.commenter .details {
+    column-gap: 10px;
+    align-items: center;
+}
+.commenter .details .photo {
+    width: 56px;
+    height: 56px;
+}
+.commenter .more {
+    cursor: pointer;
+}
+.commenter p {
+    margin-bottom: 0;
+}
+.commenter .details .info .name {
+    font-family: 'Poppins', sans-serif;
+    color: #252F40;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+.commenter .details .info .role {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: #6F7785;
+}
+.commenter .details .info .time {
+    font-size: 8px;
+    font-weight: 400;
+    color: #8C8C8C;
+    line-height: 10px;
+}
+
+.comment-card {
+    border-top: 1px solid #D8D8D8;
+    padding: 1.5rem;
+}
+.comment-div{
+    width: 100%;
+    padding: 5px;
+}
+.comment-text{
+    width: 100%;
+}
+.comment-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    opacity: .5;
+}
+
+.edit .iconify {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.edit .iconify#like {
+    color: #34A853;
+}
+.edit .iconify#dislike {
+    color: #C4C4C4;
+    margin-left: 15px;
+}
+
+.reply-btn{
+    border: none; 
+    outline: none; 
+    background: none;
+}

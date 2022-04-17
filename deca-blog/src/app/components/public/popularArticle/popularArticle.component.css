@@ -1,0 +1,79 @@
+* {
+    font-family: 'Red Hat Display';
+}
+
+a{
+    text-decoration: none;
+}
+.wrapper{
+    margin-left:10px; 
+    width:100%;
+    padding-left: 16%;
+    height: 100%;
+}
+.card {
+    margin-bottom: 30px;
+}
+.title{
+    width: 100%;
+    text-align : center;
+    font-weight : 700;
+    font-size:24px;
+}
+.popular-article-card{
+    width:100%;
+    margin-top:30px; 
+    margin: 0 auto 60px;
+    border: 0;
+}
+.route-wrapper:hover{
+    cursor: pointer;
+}
+.article-image{
+    width: 200px; 
+    margin:16px 0;
+}
+
+.article-image > img{
+    margin: 0 auto;
+    height: 200px;
+    object-fit: cover;
+}
+.card-title{
+    font-size:18px;
+    line-height:120%;
+    font-weight:700;
+    text-align:center;
+    padding-top:10px;
+    width: 100%;
+}
+
+.card-title:hover{
+    color: var(--solid-green);
+}
+.popular-body .info{
+    width: 100%;
+    align-items: center;
+    column-gap: 16px;
+}
+.popular-body .info .image {
+    width: 40px;
+    height: 40px;
+}
+.popular-body .info .inner-text {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+}
+.popular-body .info span{
+    font-weight: 700;
+}
+.title{
+    text-align:center;
+    margin-top:8px;
+}
+
+.hov-text:hover{
+    color: var(--solid-green);
+}

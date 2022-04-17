@@ -1,0 +1,59 @@
+@import "~alertifyjs/build/css/alertify.min.css";
+@import "~alertifyjs/build/css/themes/bootstrap.rtl.min.css";
+@import '../node_modules/quill/dist/quill.bubble.css'; 
+@import '../node_modules/quill/dist/quill.snow.css';
+/* You can add global styles to this file, and also import other style files */
+
+.alertify-notifier {
+  top: 10px;
+  left: 900px;
+}
+:root {
+  --green-gradient: linear-gradient(86.41deg, #34a853 49.38%, #b8d344 98%);
+  --solid-green: #34a853;
+  --border-rad:8px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2E2F34;
+  color: white;
+  height: 300px;
+  overflow: scroll;
+} 
+.bodytext{
+  width: 70%;
+  margin:0 auto;
+  margin-left: 40px;
+}
+.box{
+  width: 70%;
+  margin:40px 40px 0 40px;
+}
+.second{
+  margin-top:40px;
+  margin-right: 10px;
+}
+.third{
+  margin-top: 40px;
+  margin-right: 10px;
+}
+.fourth{
+  margin-right: 20px;
+  margin-top: 40px;
+} 
+
+.active_link{
+  color: #34a853;
+}
+.page-title {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  font-weight: 700;
+  font-size: 24px;
+  padding-top: 20px;
+  lis
+}

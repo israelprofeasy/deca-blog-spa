@@ -1,0 +1,155 @@
+*{
+    font-family: 'Mulish', sans-serif;
+}
+.wrapper{
+    width: 100%;
+    padding: 0 10% 0 10%;
+    box-sizing: border-box;
+    background-color: #F1F1F1;
+}
+.main-container{
+    padding: 2% 0 1% 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    row-gap: 5%;
+    column-gap: 5%;
+    grid-template-areas: "tl tm tr"
+                         "cl cm cr" 
+                         "b b b";
+}
+
+.card{
+    background-color: #fafafa;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 5%;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 2px rgb(219, 218, 218);
+}
+.seven{
+    grid-area: b;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+#myChart{
+    width: 100%;
+    height: 100%;
+}
+.icon-text{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+.fit{
+margin-left: 14%;
+}
+.icon-text img{
+    margin-right: 10px;
+}
+.ctop,.cbtm{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5% 0 5%;
+    box-sizing: border-box;
+}
+.ctop{
+    font-size: 19px;
+    color: #9FA2B4;
+    text-align: center;
+}
+.cbtm{
+    font-size: 32px;
+    color: #252733;
+    justify-content: center;    
+}
+
+.footer{
+   padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.btm-nav{
+    list-style: none;
+    display: flex;  
+}
+.btm-nav li{
+    margin-left: 20px;
+}
+
+
+@media screen and (max-width:1024px) {
+    .main-container{
+        padding: 2% 0 1% 0;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 2%;
+        column-gap: 2%;
+        grid-template-areas: "tl tm"
+                             "tr cl" 
+                             "cm cr" 
+                             "b b";
+    }
+    .wrapper{
+        padding: 0 0% 0 0%;
+    }
+    .card{
+        border-radius: 5px;
+        padding: 2%;
+    }
+    .icon-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .fit{
+        margin-left: 0;
+    }
+    .ctop,.cbtm{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1%;
+    }
+    .ctop{
+        height: 70%;
+        font-size: 16px;
+    }
+    .cbtm{
+        height: 30%;
+        font-size: 25px;
+    }
+    
+}
+
+@media screen and (max-width:350px) {
+    .main-container{
+        padding: 2% 0 1% 0;
+        grid-template-columns: 1fr;
+        row-gap: 2%;
+        column-gap: 2%;
+        grid-template-areas: "tl" 
+                             "tm"
+                             "tr" 
+                             "cl" 
+                             "cm" 
+                             "cr" 
+                             "b";
+        
+    }
+
+}

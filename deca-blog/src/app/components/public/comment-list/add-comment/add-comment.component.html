@@ -1,0 +1,82 @@
+<div class="wrapp">
+  <div class="commenter">
+    <div class="details d-flex">
+      <div class="photo">
+        <img
+          *ngIf="userIsLoggedIn"
+          class="img-fluid"
+          src="{{ user.Photo }}"
+          alt=""
+          style="border-radius: 50%"
+        />
+        <img
+          *ngIf="!userIsLoggedIn"
+          class="img-fluid"
+          src="../../../../../assets/images/avartar.png"
+          alt=""
+          style="border-radius: 50%"
+        />
+      </div>
+      <div class="info">
+        <p *ngIf="!userIsLoggedIn" class="name">Ananymous</p>
+        <p *ngIf="userIsLoggedIn" class="name">{{ user.FullName }}</p>
+      </div>
+    </div>
+  </div>
+  <form
+    action=""
+    #NewComment="ngForm"
+    [formGroup]="commentForm"
+    (submit)="validateForm('CommentText')"
+  >
+    <!-- <div *ngIf="submitted && !commentForm.controls['CommentText'].valid"  style="color:red; font: 3px;">comment text is required</div> -->
+    <div class="comment-input">
+      <textarea
+        formControlName="CommentText"
+        name="CommentText"
+        id="comment"
+        cols="30"
+        rows="4"
+        placeholder="Leave a comment"
+      ></textarea>
+    </div>
+    <div
+      class="comment-tools d-flex justify-content-between align-items-center"
+    >
+      <!-- <div class="edit">
+        <span class="fw-bold bold">B</span>
+        <span class="fst-italic italicize">i</span>
+      </div> -->
+      <div
+        class="buttons"
+        style="
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 50%;
+        "
+      >
+        <div (click)="clearForm()" id="cancel" style="margin-top: 5px">
+          Clear
+        </div>
+        <div
+          *ngIf="!userIsLoggedIn"
+          class="add-comment-btn"
+          id="respond"
+          data-bs-toggle="modal"
+          data-bs-target="#commentView"
+          (click)="modalService.open('login')"
+        >
+          Respond
+        </div>
+        <button *ngIf="userIsLoggedIn && !commenting" id="respond" type="submit">
+          Respond
+        </button>
+        <button *ngIf="userIsLoggedIn && commenting" id="respond" type="submit" disabled>
+          <i class="pi pi-spin pi-spinner"></i>
+          Respond
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,145 @@
+<div class="article" *ngIf="!loading && article">
+  <div class="main" *ngIf="!error">
+    <div class="inner-main">
+      <div id="main-bg">
+        <img src="{{ article.Topic.PhotoUrl }}" class="header-img" />
+      </div>
+      <div class="heading" id="heading">
+        <div class="inner-heading">
+          <h1>{{ article.Topic.TopicName }}</h1>
+          <p>
+            Published on <i>{{ Topicdate | date }}</i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="articletext" *ngIf="!error">
+    <div
+      id="subtopics"
+      class="subtopics"
+      (scroll)="checkScrollStatus('subtopics')"
+    >
+      <div
+        class="sub"
+        *ngFor="let item of article.Articles; let i = index"
+        style="text-transform: capitalize"
+      >
+        <a id="sub-topics-list" (click)="gotoToView(item.SubTopicName)"
+          >{{ i + 1 }}. {{ item.SubTopicName }}</a
+        >
+      </div>
+    </div>
+    <div class="text">
+      <div class="single" *ngFor="let item of article.Articles">
+        <h1 id="{{ item.SubTopicName }}">{{ item.SubTopicName }}</h1>
+        <p>
+          By
+          <a
+            class="name"
+            [routerLink]="['/profile', item.Contributor_.AuthorId]"
+            >{{ item.Contributor_.FullName }}</a
+          >
+          on
+          <i>{{ item.Date | date }}</i>
+        </p>
+        <br />
+        <div [innerHTML]="item.Text"></div>
+      </div>
+      <div class="icons d-flex align-items-center mb-5">
+        <button
+          *ngIf="!isUserLoggedIn()"
+          (click)="modalService.open('login')"
+          class="add-contribution-btn"
+        >
+          Add a contribution
+        </button>
+        <button
+          *ngIf="isUserLoggedIn()"
+          class="add-contribution-btn"
+          [routerLink]="['/article/add-contribution', article.Topic.TopicId]"
+        >
+          Add a contribution
+        </button>
+
+        <div *ngIf="!isUserLoggedIn()" (click)="modalService.open('login')">
+          <span
+            id="up"
+            class="iconify"
+            data-icon="ant-design:like-filled"
+          ></span>
+          {{ totalLikes }}
+        </div>
+
+        <div (click)="likeArticle()" *ngIf="isUserLoggedIn()">
+          <span
+            id="up"
+            class="iconify"
+            data-icon="ant-design:like-filled"
+          ></span>
+          {{ totalLikes }}
+        </div>
+
+        <!-- <div *ngIf="!isUserLoggedIn()" (click)="modalService.open('login')"><span id="comment" class="iconify" data-icon="fa:comment-o"></span> {{totalComments}}</div> -->
+        <div data-bs-toggle="modal" data-bs-target="#commentView">
+          <span
+            id="comment"
+            class="iconify mr-1"
+            data-icon="fa:comment-o"
+          ></span
+          ><span #totalCommentsSpan> {{ totalComments }}</span>
+        </div>
+
+        <app-comment-list
+          (onCommentAdded)="handleCommentAddedEvent($event, totalCommentsSpan)"
+        ></app-comment-list>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="article.Articles.length >= 11 && !scrollDown"
+    id="mouse-scroll"
+    (click)="scrollTop('subtopics')"
+    class="mouse-scroll show-mouse"
+  >
+    <!-- <div class="mouse">
+        <span class="wheel iconify" data-icon="carbon:dot-mark"></span>
+      </div> -->
+    <div>
+      <span
+        class="m_scroll_arrows unu iconify"
+        data-icon="ep:arrow-down"
+      ></span>
+      <span
+        class="m_scroll_arrows doi iconify"
+        data-icon="ep:arrow-down"
+      ></span>
+      <span
+        class="m_scroll_arrows trei iconify"
+        data-icon="ep:arrow-down"
+      ></span>
+    </div>
+  </div>
+
+  <!---scroll up -->
+  <div
+    *ngIf="scrollDown"
+    id="mouse-scroll"
+    (click)="scrollBottom('subtopics')"
+    class="mouse-scroll show-mouse"
+  >
+    <!-- <div class="mouse">
+      <span class="wheel iconify" data-icon="carbon:dot-mark"></span>
+    </div> -->
+    <div>
+      <span class="m_scroll_arrows unu iconify" data-icon="ep:arrow-up"></span>
+      <span class="m_scroll_arrows doi iconify" data-icon="ep:arrow-up"></span>
+      <span class="m_scroll_arrows trei iconify" data-icon="ep:arrow-up"></span>
+    </div>
+  </div>
+</div>
+<div>
+  <app-related-articles> </app-related-articles>
+</div>
+<div *ngIf="error" class="not-found">Oops! Article not found</div>

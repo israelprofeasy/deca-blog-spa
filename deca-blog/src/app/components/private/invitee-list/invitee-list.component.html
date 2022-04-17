@@ -1,0 +1,50 @@
+<div class="wrap row m-3"> 
+      <div class="header d-flex justify-content-between">
+        <div class="page-title">
+            <span class="iconify" data-icon="ic:outline-auto-stories"></span>
+              Invitees
+        </div>
+        <div class="page-tools d-inline-block">
+          <app-invitee-search-bar [pageData]="pageData"  (searchResult)="initializeSearchResults($event)" (loading)="loading = $event"></app-invitee-search-bar>
+            <button class="btn"><span class="iconify" data-icon="fa-solid:sort-amount-up"></span>Sort</button>              
+            <button class="btn"><span class="iconify" data-icon="fa:filter"></span>Filter</button>              
+        </div>
+      </div>
+    <div class="row mt-3">
+      <p-progressBar mode="indeterminate" [style]="{height: '4px'}" *ngIf="loading"></p-progressBar>
+      <div class="table-responsive">
+        <table class="table table-hover ">
+          <thead>
+            <tr>
+              <th scope="col-4 text-muted">Name</th>
+              <th scope="col-3 text-muted">Email</th>
+              <th scope="col-2 text-muted">Squad</th>
+              <th scope="col-2 text-muted">Stack</th>
+              <th scope="col-1"></th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!!searchResults">
+            <tr class="my-auto" *ngFor="let res of searchResults.Data">
+              <td class="col-4 align-middle name"><a [routerLink]="['/admin','invitees', res.Id]">{{res.FirstName}} {{res.LastName}}</a></td>
+              <td class=" cdcol-3 align-middle email">{{res.Email}}</td>
+              <td class=" cdcol-2 align-middle squad">{{res.Squad}}</td>
+              <td class=" cdcol-2 align-middle stack">{{res.Stack}}</td>
+              <td class="col-1 align-middle mx-auto my-auto">
+                <action-drop-down [dropdownData] = "dropdownActions" [actionData] = "res.Id"></action-drop-down>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <decablog-pagination 
+            [data] = "paginationMetaData"
+            (onPageChanged) = "handleNewPageNumber($event)"
+        >
+        </decablog-pagination>
+        
+      </div>
+    </div>
+    <!--End of Div Table-->
+  </div>
+
+
+

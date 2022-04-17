@@ -1,0 +1,163 @@
+<div *ngIf="!loadingInfo  else loading">
+  <div *ngIf="!loadingError else errorLoading">
+    <form [formGroup]="updateForm">
+      <div class="wrapper m-auto ">
+          <div class="info-wrapper">
+              <div class="info-img m-auto">
+                  <img [src]="userPhoto!=null? userPhoto : '/deca-blog/src/assets/images/avartar.png'" class="img-fluid" alt='{{firstName}}'>
+
+                  <!-- <img [src]="" class="img-fluid" alt="personal photo"> -->
+
+              </div>
+              
+                <div class="mb-3 mt-3">  
+                  <div>
+                    <p class="info-title">Personal Info</p>
+                    <br>
+                  </div>
+                  <!--First and Last Name-->
+                  <div class="row mb-2">
+                    <div class="col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="firstname">First Name</label>
+                        <input type="text" 
+                          formControlName="firstname"
+                          id="firstname" 
+                          class="form-control p-2" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" 
+                          formControlName="lastname"
+                          id="lastname" 
+                          class="form-control p-2" />
+                      </div>
+                    </div>
+                  </div>
+                  <!--Gender and Phone Number-->
+                  <div class="row mb-2">
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="gender">Gender</label>
+                        <select class="form-select select" formControlName = "gender">
+                          <option *ngFor="let gender of genders" [value]="gender">{{ gender }} </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" 
+                          formControlName="phoneNumber"
+                          id="phone" 
+                          class="form-control p-2" />
+                      </div>
+                    </div>
+                  </div>
+                  <!--Email and Squad-->
+                  <div class="row mb-2">
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control"  id="email" 
+                          formControlName = "email"
+                          class="form-control p-2"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="squad">Squad</label>
+                        <input type="squad" 
+                          class="form-control p-2" 
+                          id="squad"
+                          formControlName = "squad" />
+                      </div>
+                    </div>
+                  </div>
+                  <!--Stack and Street-->
+                  <div class="row mb-2">
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="stack">Stack</label>
+                        <input type="text" class="form-control"  id="stack" 
+                          formControlName = "stack"
+                          class="form-control p-2"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="street">Street</label>
+                        <input type="text" 
+                          class="form-control p-2" 
+                          id="address"
+                          formControlName = "street" />
+                      </div>
+                    </div>
+                  </div>
+                  <!--State and Country-->
+                  <div class="row mb-2">
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="state">State</label>
+                        <input type="text" class="form-control"  id="email" 
+                          formControlName = "state"
+                          class="form-control p-2"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <div class="mx-auto my-auto">
+                        <label for="country">Country</label>
+                        <input type="text" 
+                          class="form-control p-2" 
+                          id="country"
+                          formControlName = "country" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Button-->
+                <div>
+                  <div class="row d-flex">
+                    <div class="col-md-6"></div>
+                      <div class="col-md-6 mx-auto my-auto" style="right:0">       
+                        <div class="d-flex justify-content-end">
+                          <button class="btn btnPrimary p-2" type="submit" (click)="deactivateUser()" *ngIf="isActive">Deactivate</button>
+                          <button class="btn btnPrimary p-2" type="submit" (click)="activateUser()" *ngIf="!isActive">Activate</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      </div>   
+    </form>
+  </div>   
+</div>
+<ng-template #loading>
+  <div class="loading-wrapper" class="blocktext">
+    <div class="img-wrapper">
+       <img id="imgs"  class ="loadingImg" src="../../assets/images/loadingImg01.svg">
+    </div>
+  
+  </div>
+</ng-template>
+<ng-template #errorLoading>
+  <div class="blocktext">
+    <p>Something went wrong
+      Please <a id="reload-anchor" style="color: rgb(106, 106, 236);" (click)="reloadCurrentPage()"><u>click here</u></a> to reload page.
+</p>
+</div>
+</ng-template>
+<!-- Page not found. 
+There was an error loading the page. 
+<mark (click)="reloadCurrentPage()">Click here </mark> to reload page -->
+
+
+
+

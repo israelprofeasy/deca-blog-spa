@@ -1,0 +1,36 @@
+<div class="wrapper container row justify-content-center justify-content-around">
+  <h3 class="title mb-4">Popular Articles</h3>
+  <div *ngIf="!loading else loadingArticles">
+    <div class="popular-article-card card col justify-content-center" *ngFor="let item of popularArticlesDisplay">
+      <div class="route-wrapper">
+        <div [routerLink]="['/articles', item.TopicId]" class="article-image">
+          <img *ngIf="checkImage(item.CoverPhotoUrl)" src={{item.CoverPhotoUrl}} alt=""
+            style="width:100%; height:160px;">
+          <img *ngIf="!checkImage(item.CoverPhotoUrl)" src="../../../assets/images/BigPopular.png"
+            style="width:100%; height:160px;">
+        </div>
+        <div class="popular-body w-100">
+          <div [routerLink]="['/articles', item.TopicId]" class="card-title"><a>{{formatTopic(item.Topic)}}</a>
+          </div>
+          <div class="info hov-text d-flex justify-content-center" *ngIf="!isUserLoggedIn()" (click)="modalService.open('login')" [routerLink]="['/profile', item.Author.AuthorId]">
+            <div class="image"><img src={{item.Author.AuthorPhotoUrl}} class="img-fluid" alt=""></div>
+            <p class="inner-text mb-2">{{item.Author.FullName}} <span>|</span> {{item.DateCreated | date}}</p>
+          </div>
+          <div class="info hover-text d-flex justify-content-center" *ngIf="isUserLoggedIn()" [routerLink]="['/profile', item.Author.AuthorId]">
+            <div class="image"><img src={{item.Author.AuthorPhotoUrl}} class="img-fluid" alt=""></div>
+            <p class="inner-text mb-2">{{item.Author.FullName}} <span>|</span> {{item.DateCreated | date}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<ng-template #loadingArticles>
+  <div *ngFor="let item of [1,2,3,4,5,6]">
+    <br>
+    <app-loading-article-card></app-loading-article-card>
+    <br>
+    <br>
+  </div>
+</ng-template>

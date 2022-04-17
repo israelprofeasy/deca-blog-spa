@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600;700&family=Red+Hat+Display:wght@500&display=swap');
+
+.name {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.3125rem;
+    color: #373b56;
+}
+
+.user-table img{
+    width: 18px;
+    object-fit: contain;
+    margin-right: 7px;
+}
+
+ .title{
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     width: 300px;
+ }
+
+.stack-squad {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.2px;
+    color: #373b56;
+}
+
+th {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.0825rem;
+    letter-spacing: 0.2px;
+    color: #9fa2b4;
+}
+
+.t-img img{
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+@media (max-width: 420px){
+    img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,175 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;  
+    background-color: #F1F1F1;
+}
+:root{
+    --paraText-color:#ACACAC;
+    --button-gradient-color: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+    --shadow-color: 0px 8px 32px 0px #34A85314;
+}
+.invite-user-wrapper{
+ 
+    margin: auto;
+    width: 400px;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    height: 480px;
+    padding: 5px;
+
+}
+.iconImg{
+    width: 100px;
+}
+.img-wrapper, .btn-wrapper{
+    margin-top: 20px;
+    text-align: center;
+ }
+ .btn-wrapper .btn{
+    background: linear-gradient(86.41deg, #34A853 49.38%, #B8D344 98%);
+    width: 200px;
+    font-family:Mulish;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: #fff; 
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.btn-wrapper .btn:hover{
+    background: linear-gradient(90.90deg, #24A853 49.38%, #B8D3A4 90%);
+    transition: ease-in-out;
+}
+
+
+.form-control{
+    background: #F1f1F1; 
+    outline: none;
+    height: 50px;
+    width: 434px;
+    border-radius: 4px;
+    padding-right:60px !important;
+    position: relative;
+   
+}
+.user-text{
+    font-style: italic;
+    color: #A6A6A6;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.06px;
+}
+
+.valid-email2{
+    color: gray;
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 15px;
+    display: block;
+    margin-top: 30px;
+    padding: 10px;
+
+
+}
+.input-group .icon{
+    color: #ACACAC;
+    right:10px;
+    position:absolute;
+    top:15px;  
+    width: 20px;
+    opacity: 0.4;
+}
+.invite-user-wrapper .valid-email{
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 15px;
+    display: block;
+    margin: 20px;
+    text-align: center;
+    margin-left: 10px!important;
+}
+
+.input-wrapper{
+    margin:0 20px;
+    outline: none;
+}
+.form-group {
+    position: relative;
+}
+.form-group .icon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    right: 10px;
+    bottom: 3px;
+    color: #ACACAC;
+   
+}
+.form-group .iconify.input-icon{
+    position: absolute;
+    pointer-events: none;
+    right: 30px;
+    top: 250px;
+    color: #ACACAC;
+}
+.form-group .icon-button {
+    position: absolute;
+    padding: 3px 5px;
+    border: none;
+    background: transparent;
+    top: 33px;
+    right: 13px;
+    color: #ACACAC;
+}
+
+label {
+    font-size: 12px;
+    line-height: 15px;
+    color: #373B56;
+}
+label::after{
+    content: ' *';
+    color: #DD5252;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+.select:focus {
+    box-shadow: none;
+    outline: 0 none;
+    background-color: #F1F1F1;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+.select
+ {
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    width: 350px;
+    background-color: #F1F1F1;
+    text-indent: 5px;
+    font-size: 14px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] { 
+    padding-right: 33px;
+}
+
+
